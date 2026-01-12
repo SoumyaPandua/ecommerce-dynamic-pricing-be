@@ -1,0 +1,30 @@
+{
+  "name": "dynamic-pricing-engine",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.2.1",
+    "ioredis": "^5.9.1",
+    "joi": "^18.0.2",
+    "mongoose": "^9.1.3",
+    "node-cron": "^4.2.1",
+    "node-fetch": "^3.3.2",
+    "redlock": "^5.0.0-beta.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "winston": "^3.19.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
