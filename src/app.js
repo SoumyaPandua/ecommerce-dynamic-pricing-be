@@ -7,30 +7,26 @@ import { apiRateLimiter } from "./common/middleware/rateLimit.middleware.js";
 
 const app = express();
 
-/**
- * Global middlewares
- */
 app.use(express.json());
 
-/**
- * Rate limiting (protect all APIs)
- * Applied BEFORE routes
- */
 app.use("/api", apiRateLimiter);
 
-/**
- * Swagger documentation
- */
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-/**
- * API routes
- */
+app.get("/", (req, res) => {
+  res.json({
+    name: "Dynamic Pricing Engine API",
+    status: "RUNNING",
+    environment: process.env.NODE_ENV || "development",
+    version: "1.0.0",
+    documentation: "/docs",
+    health: "/api/v1/health",
+    timestamp: new Date(),
+  });
+});
+
 app.use("/api/v1", routes);
 
-/**
- * Global error handler (ALWAYS LAST)
- */
 app.use(errorHandler);
 
 export default app;
