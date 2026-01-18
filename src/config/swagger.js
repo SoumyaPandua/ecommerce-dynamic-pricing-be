@@ -18,7 +18,7 @@ export const swaggerSpec = swaggerJsdoc({
     ],
     servers: [
       {
-        url: "http://localhost:4000",
+        url: "https://ecommerce-dynamic-pricing-be.onrender.com",
       },
     ],
   },
