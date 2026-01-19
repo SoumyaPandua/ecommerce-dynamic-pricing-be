@@ -27,6 +27,10 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/loaderio-ec7b0ce4bdc1215dc3060d1df43194d7", (req, res) => {
+  res.send("loaderio-ec7b0ce4bdc1215dc3060d1df43194d7");
+});
+
 app.use("/api/v1", routes);
 
 app.use(errorHandler);
